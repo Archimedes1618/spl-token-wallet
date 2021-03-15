@@ -10,7 +10,7 @@ import {
   getAccountFromSeed,
   DERIVATION_PATH,
 } from '../utils/walletProvider/localStorage.js';
-import { useSolanaExplorerUrlSuffix } from '../utils/connection';
+import { useSafeCoinExplorerUrlSuffix } from '../utils/connection';
 import Container from '@material-ui/core/Container';
 import LoadingIndicator from '../components/LoadingIndicator';
 import { BalanceListItem } from '../components/BalancesList.js';

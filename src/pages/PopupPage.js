@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import { useWallet, useWalletPublicKeys } from '../utils/wallet';
 import { decodeMessage } from '../utils/transactions';
-import { useConnection, useSolanaExplorerUrlSuffix } from '../utils/connection';
+import { useConnection, useSafeCoinExplorerUrlSuffix } from '../utils/connection';
 import {
   Divider,
   FormControlLabel,
@@ -404,7 +404,7 @@ function ApproveSignatureForm({
   autoApprove,
 }) {
   const classes = useStyles();
-  const explorerUrlSuffix = useSolanaExplorerUrlSuffix();
+  const explorerUrlSuffix = useSafeCoinExplorerUrlSuffix();
   const connection = useConnection();
   const wallet = useWallet();
   const [publicKeys] = useWalletPublicKeys();
@@ -457,7 +457,7 @@ function ApproveSignatureForm({
   const onOpenAddress = (address) => {
     address &&
       window.open(
-        'https://explorer.solana.com/address/' + address + explorerUrlSuffix,
+        'https://explorer.safecoins.com/address/' + address + explorerUrlSuffix,
         '_blank',
       );
   };

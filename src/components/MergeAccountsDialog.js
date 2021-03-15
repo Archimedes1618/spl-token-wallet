@@ -15,7 +15,7 @@ import { useWalletPublicKeys } from '../utils/wallet';
 import {
   useConnection,
   refreshAccountInfo,
-  getMultipleSolanaAccounts,
+  getMultipleSafeCoinAccounts,
 } from '../utils/connection';
 import { parseTokenAccountData } from '../utils/tokens/data';
 import { refreshWalletPublicKeys, useWallet } from '../utils/wallet';
@@ -55,7 +55,7 @@ export default function MergeAccountsDialog({ open, onClose }) {
       // if we previously sent the close transaction, but did not receive
       // a response due to RPC node instability.
       const tokenAccounts = (
-        await getMultipleSolanaAccounts(connection, publicKeys)
+        await getMultipleSafeCoinAccounts(connection, publicKeys)
       )
         .filter(
           (acc) =>

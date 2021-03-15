@@ -59,7 +59,7 @@ export function useIsProdNetwork() {
   return context.endpoint === MAINNET_URL;
 }
 
-export function useSolanaExplorerUrlSuffix() {
+export function useSafeCoinExplorerUrlSuffix() {
   const context = useContext(ConnectionContext);
   if (!context) {
     throw new Error('Missing connection context');
@@ -123,7 +123,7 @@ export function setInitialAccountInfo(connection, publicKey, accountInfo) {
   setCache(cacheKey, accountInfo, { initializeOnly: true });
 }
 
-export async function getMultipleSolanaAccounts(
+export async function getMultipleSafeCoinAccounts(
   connection: Connection,
   publicKeys: PublicKey[],
 ): Promise<
